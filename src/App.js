@@ -19,7 +19,7 @@ const App = () => {
 
   const [counter, setCounter] = useState(5)
     if(counter == 0) {
-      alert("Try again" )
+      alert("Try Again")
     }
 
   const handleGamePlay = (clickedSquare) => {
@@ -37,6 +37,7 @@ const App = () => {
     } else if(clickedSquare === bombLocation) {
       updateBoard[clickedSquare] = "💣"
       setBoard(updateBoard)
+      alert("Try Again")
     } else {
       updateBoard[clickedSquare] = "🌴"
     setBoard(updateBoard)
