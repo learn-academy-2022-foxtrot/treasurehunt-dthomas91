@@ -50,6 +50,9 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   - created an alert to appear if treasure box is clicked
 
 - As a user, I can see a message informing me that I lost the game if I select the square that contains the bomb.
+  - branch: try-again-alert
+  - created an alert to appear if bomb box is clicked
+
 - As a user, I cannot continue to play the game after I win or lose.
 - As a user, I can see a message informing me that I lost the game when I run out of turns (the counter reaches zero).
 
