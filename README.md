@@ -40,6 +40,11 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   - added functionality to the button to reset the board when clicked
 
 - As a user, I can see a counter that shows how many guesses I have left. The counter starts at five and decrements one every time I click on a square that is not the treasure nor the bomb.
+  - branch guess-counter
+  - created a function for counter/setCounter with a useState(5)
+  - under the else statement for any square that doesn't contain the bomb or treasure it will setCounter(counter - 1)
+  - I created a <p></p> under the button to display the counter
+
 - As a user, I can see a message informing me that I won the game if I select the square that contains the treasure.
 - As a user, I can see a message informing me that I lost the game if I select the square that contains the bomb.
 - As a user, I cannot continue to play the game after I win or lose.
