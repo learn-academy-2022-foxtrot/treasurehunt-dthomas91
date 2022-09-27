@@ -17,9 +17,16 @@ const App = () => {
   const [treasureLocation, setTreasureLocation] = useState(Math.floor(Math.random() * board.length))
   const [bombLocation, setBombLocation] = useState(Math.floor(Math.random() * board.length))
 
+  const [counter, setCounter] = useState(5);
+
   const handleGamePlay = (clickedSquare) => {
     // makes a copy of the board in state so  that we can modify it in this method
+    if (bombLocation === treasureLocation) {
+      setBombLocation(Math.floor(Math.random() * board.length));
+    }
+    
     let updateBoard = [...board]
+    
     if(clickedSquare === treasureLocation) {
       updateBoard[clickedSquare] = "💎"
       setBoard(updateBoard)
@@ -29,9 +36,11 @@ const App = () => {
     } else {
       updateBoard[clickedSquare] = "🌴"
     setBoard(updateBoard)
+    setCounter(counter - 1);
     }
   }
 
+  
   const handleReset = () => {
     setBoard([
       "?",
@@ -47,6 +56,7 @@ const App = () => {
     setTreasureLocation(Math.floor(Math.random() * board.length))
     setBombLocation(Math.floor(Math.random() * board.length))
   }
+
 
   console.log("treasureLocation:", treasureLocation)
   console.log("bombLocation:", bombLocation)
@@ -65,6 +75,7 @@ const App = () => {
         })}
       </div>
       <button onClick={handleReset}>Restart Game</button>
+      <p>Guesses Remaining: {counter}</p>
     </>
   )
 }
