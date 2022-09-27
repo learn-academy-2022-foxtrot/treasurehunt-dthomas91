@@ -17,7 +17,10 @@ const App = () => {
   const [treasureLocation, setTreasureLocation] = useState(Math.floor(Math.random() * board.length))
   const [bombLocation, setBombLocation] = useState(Math.floor(Math.random() * board.length))
 
-  const [counter, setCounter] = useState(5);
+  const [counter, setCounter] = useState(5)
+    if(counter == 0) {
+      alert("Try again" )
+    }
 
   const handleGamePlay = (clickedSquare) => {
     // makes a copy of the board in state so  that we can modify it in this method
@@ -30,6 +33,7 @@ const App = () => {
     if(clickedSquare === treasureLocation) {
       updateBoard[clickedSquare] = "💎"
       setBoard(updateBoard)
+      alert("You won!")
     } else if(clickedSquare === bombLocation) {
       updateBoard[clickedSquare] = "💣"
       setBoard(updateBoard)
